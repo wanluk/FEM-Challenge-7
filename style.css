@@ -1,0 +1,255 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a{
+    all:unset
+}
+
+/* -------------------------------------------------------- */
+
+/* ----- utility ----- */
+
+:root{
+    --p-PaleBlue:hsl(225, 100%, 94%);
+    --p-BrightBlue: hsl(245, 75%, 52%);
+
+    --n-VeryPaleBlue:hsl(225, 100%, 98%);
+    --n-DesaturatedBlue:hsl(224, 23%, 55%);
+    --n-DarkBlue:hsl(223, 47%, 23%);
+
+    --hover-blue:hsla(245, 83%, 68%, 1);
+}
+
+.fw-500{ font-weight: 500; }
+.fw-700{ font-weight: 700; }
+.fw-900{ font-weight: 900; }
+
+.fc-DarkBlue{ color: var(--n-DarkBlue);}
+.fc-DesaturatedBlue{ color: var(--n-DesaturatedBlue);}
+
+.fs-100{font-size: 13px;}
+.fs-200{font-size: 14px;}
+.fs-300{font-size: 15px;}
+.fs-400{font-size: 22px;}
+
+.bottom>p,h1{
+    text-align: center;
+}
+
+/* ----- body ----- */
+
+body{
+    font-family:'Red Hat Display' ;
+    background-color: var(--p-PaleBlue);
+    background-image: url(./img/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    width: min(87%, 450px);
+    border-radius: 20px;
+    background-color: white;
+}
+
+/* ----- top ----- */
+
+img{
+    border-radius: 20px 20px 0 0 ;
+}
+
+/* ----- bottom ----- */
+
+.bottom{
+    padding: 32px 24px 32px 24px;
+}
+
+.bottom>p{
+  padding: 16px 8px 0 8px;
+  line-height: 25px;
+}
+
+/* ----- payment-plan-section ----- */
+
+.payment-plan{
+  width: 100%;
+  height: 81px;
+  background-color: var(--n-VeryPaleBlue);
+  border-radius: 11px;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+
+  padding: 16px;
+  margin-top: 24px;
+}
+
+.payment-plan img{
+  height: 48px;
+  width: 48px;
+}
+
+.pricing{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+}
+
+.pricing a{
+  text-decoration: underline;
+  color: var(--p-BrightBlue);
+}
+
+.pricing a:hover{
+  text-decoration: none;
+  color: var(--hover-blue);
+}
+
+/* ----- Buttons ----- */
+
+.buttons{
+  margin-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:2rem;
+}
+
+button{
+  background-color: var(--p-BrightBlue);
+  color: white;
+  
+  border: none;
+  border-radius: 11px;
+
+  width: 100%;
+  height: 50px;
+
+  box-shadow: 0px 20px 20px rgba(56, 42, 225, 0.190291);
+}
+
+button:hover{
+  background-color: var(--hover-blue);
+}
+
+.buttons a:hover{
+  color: var(--n-DarkBlue);
+}
+
+/* ---- Desktop ----- */
+
+@media only screen and (min-width: 550px){
+  body{
+    background-image: url(./img/pattern-background-desktop.svg);
+  }
+
+  .fs-100{font-size: 14px;}
+  .fs-200, .fs-300{font-size: 16px;}
+  .fs-400{font-size: 28px;}
+
+  .bottom{
+    padding: 45px 48px 48px 48px;
+  }
+
+  .bottom>p{
+    padding-top:17px;
+  }
+
+  .payment-plan{
+    margin-top: 20px;
+    padding: 25px 25px;
+    height: 95px;
+  }
+
+  .pricing{
+    gap: 94px;
+  }
+  
+  .pricing div{
+    white-space: nowrap;
+  }
+}
